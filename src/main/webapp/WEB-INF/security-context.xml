@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+       <security:global-method-security jsr250-annotations="enabled" pre-post-annotations="enabled" secured-annotations="enabled"/>
+
+       <security:http use-expressions="true">
+              <security:intercept-url pattern="/" access="permitAll"/>
+              <security:form-login />
+              <security:logout logout-success-url="/" delete-cookies="JSESSIONID"/>
+              <security:remember-me />
+       </security:http>
+
+       <bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
+
+       <security:authentication-manager>
+              <security:authentication-provider>
+                     <security:password-encoder ref="encoder"/>
+                     <security:user-service>
+                            <security:user name="user" authorities="user"
+                                           password="6bdc2c9f961a47ac56863a3d9f3c7c30e27a80602025dbae9e95795e6a0a09f77bf9225e87949e7a"/>
+                            <security:user name="admin" authorities="admin"
+                                           password="a94a283d2209b8b7788fdc4b5bc86654c1758b0cfb900c63bec516359d43d4ef665a6f897894c8df"/>
+                     </security:user-service>
+              </security:authentication-provider>
+       </security:authentication-manager>
+</beans>

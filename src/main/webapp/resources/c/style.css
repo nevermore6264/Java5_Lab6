@@ -1,0 +1,531 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li, ol{
+    list-style: none;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+html{
+    min-height: 100%;
+    background-color: #676767;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+
+/*------------------HEADER CONTAINER-----------------*/
+.header-wrap{
+    background-color: #02122b;
+}
+
+header{
+    width: 100%;
+    min-height: 100px;
+    max-width: 960px;
+    min-width: 430px;
+    margin: 0 auto;
+    padding: 15px;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    background-color: #0e74a6;
+    background-image: linear-gradient(to right, #02122b, rgba(11,91,112, .3), #02122b);
+}
+
+header > div{
+    text-align: center;
+    color: #fff;
+}
+
+.appName{
+    font-size: 24px;
+    width: 75%;
+}
+
+.auth{
+    min-width: 100px;
+    width: 150px;
+    max-width: 25%;
+    text-align: center;
+    height: auto;
+}
+
+.auth > h4{
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.auth > a {
+    display: block;
+    width: 60px;
+    margin: auto;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    background-color: #32b0ee;
+    border: transparent;
+    border-radius: 20px;
+    position: relative;
+}
+
+.auth > a:before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: block;
+    background: url(../images/cube-icon.png) no-repeat center;
+    background-size: 20px;
+    transition: all 1s ease-out;
+}
+
+.auth > a:hover:before{
+    transform: rotate(360deg);
+}
+/*------------------END HEADER CONTAINER-----------------*/
+
+
+/*------------------NAV CONTAINER-----------------*/
+.nav-wrap{
+    background-color: #02122b;
+}
+
+nav > ul{
+    width: 100%;
+    min-height: 51px;
+    max-width: 960px;
+    min-width: 430px;
+    background-image: linear-gradient(to right, #02122b, #0a3a50, #02122b);
+    margin: 0 auto;
+}
+
+nav > ul > li {
+    display: inline-block;
+    padding: 20px 15px 15px;
+    margin-right: 20px;
+    border-top:1px solid transparent;
+    transition: border-color .5s ease-in;
+}
+
+nav li:hover, nav li.active{
+    border-color: #32b0ee;
+}
+
+nav > ul > li > a{
+    display: block;
+    color: #bdc9cf;
+}
+/*------------------END NAV CONTAINER-----------------*/
+
+/*------------------CONTENT CONTAINER-----------------*/
+.content-wrap{
+    background-color: #f4f7f9;
+    min-height: 100%;
+}
+
+main{
+    width: 100%;
+    min-height: 100%;
+    max-width: 960px;
+    min-width: 430px;
+    margin: 0 auto;
+}
+
+.service-text{
+    width: 100%;
+    display: block;
+    clear: both;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.error{
+    background-color: #e9bfbe;
+    color: #cc0011;
+}
+
+.info{
+    background-color: #b5f9b2;
+    color: #00cc23;
+}
+
+/*========INDEX PAGE=======*/
+main > .category{
+    display: block;
+    float: left;
+    width: 33.3%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 960px){
+    main > .category{
+        display: block;
+        width: 100%;
+    }
+}
+
+.category > a{
+    display: block;
+    width: 70%;
+    height: 50px;
+    margin: 20px auto;
+    padding: 80px 0;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 15px rgba(0,0,0,.7);
+    transition: all .7s ease-out;
+    opacity: .6;
+}
+
+.category.students > a{
+    background-color: #e0626a;
+    color: #fff;
+}
+
+.category.disciplines > a{
+    background-color: #102033;
+    color: #fff;
+}
+
+.category.semesters > a{
+    background-color: #6fc8ed;
+    color: #fff;
+}
+
+.category > a:hover, .category.active > a{
+    opacity: 1;
+    font-size: 36px;
+}
+
+/*========END INDEX PAGE=======*/
+
+
+/*================================FORMS STYLING====*/
+
+
+/*========FORM COMMON STYLE====*/
+form {
+    padding: 50px 0;
+}
+
+.button-container.full{
+    width: 100%;
+    margin: auto;
+}
+
+.button-container.right-aside{
+    width: 50%;
+    float: right;
+}
+
+input[type="submit"]:not(.selectButton){
+    background-color: #32b0ee;
+    border-color: transparent;
+    color: #fff;
+    margin: 10px 5%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+}
+
+.button-container.full > input[type="submit"]{
+    float: left;
+    width: 40%;
+}
+
+.button-container.right-aside > input[type="submit"]{
+    display: block;
+    clear: both;
+    width: 90%;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 960px){
+    .button-container.right-aside {
+        width: 100%;
+        clear: both;
+        margin: auto;
+    }
+
+    .button-container > input[type="submit"]{
+        display: block;
+        clear: both;
+        width: 90%;
+        margin: 10px 5%;
+        font-size: 16px;
+    }
+}
+
+.selectButton{
+    background-color: #32b0ee;
+    border-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+label, label + input, label + select {
+    display: inline-block;
+    width: 33.3%;
+    margin: 10px 0;
+    color: #052231;
+    padding: 10px 20px;
+}
+
+label {
+    text-align: right;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin: 10px 10px 10px 300px;
+    color: #052231;
+    padding: 10px 20px;
+}
+
+input[type="checkbox"]+label{
+    text-align: left;
+}
+
+input[type="text"], input[type="date"], input[type="password"]{
+    background-image: url(../images/required.png);
+    background-repeat: no-repeat;
+    background-position: 100% 25%;
+    font-style: italic;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+}
+
+input:focus:not([type="submit"]){
+    border-color: #32b0ee;
+}
+
+select{
+    width: 100%;
+    padding: 10px;
+    border-color: transparent;
+    background-color: #F4F7F9;
+}
+
+option{
+    background-color: #F4F7F9;
+}
+
+/*========END FORM COMMON STYLE====*/
+
+
+.createOrUpdate{
+    width: 100%;
+    /*border: 1px solid red;*/
+    margin: auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.createOrUpdate input[type="submit"]{
+    display: block;
+    clear: both;
+    width: 150px;
+    padding: 5px 0;
+    margin: 30px auto;
+}
+
+/*================================END FORMS STYLING====*/
+
+
+/*================================TABLES STYLING====*/
+
+/*========TABLE COMMON STYLE====*/
+/*form > .table{*/
+    /*margin-top: 60px;*/
+/*}*/
+
+.table{
+    display: table;
+    border-spacing: 20px;
+    border-collapse: separate;
+    background-color: #153f5f;
+}
+
+.caption{
+    display: table-caption;
+    color: #052231;
+}
+
+.thead{
+    display: table-header-group;
+}
+
+.tbody{
+    display: table-row-group;
+}
+
+.trow{
+    display: table-row;
+}
+
+.trowgroup{
+    display: table-row-group;
+}
+
+.tcol{
+    display: table-column;
+}
+
+/*========END TABLE COMMON STYLE====*/
+
+.student-table{
+    width: 100%;
+}
+
+.semester-table, .discipline-table{
+    width: 50%;
+}
+
+.thead > div, .trow > div{
+    display: table-cell;
+    width: 23%;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.thead > div,
+.semester-table .trow > div:first-child:not(.inputContains){
+    text-align: center;
+    background-color: #052231;
+    color: #32b0ee;
+}
+
+.tbody > div {
+    background-color: #f4f7f9;
+}
+
+.with-radio-input .thead > div:first-child,
+.with-radio-input .trow > div:first-child,
+.semester-table .trow > .inputContains{
+    width: 2%;
+    text-align: center;
+    background-color: #153f5f;
+    color: #32b0ee;
+}
+
+@media screen and (max-width: 960px){
+    .semester-table{
+        width: 100%;
+    }
+}
+/*================================END TABLES STYLING====*/
+
+.discipline-list {
+    width: 50%;
+    float: left;
+}
+
+.discipline-list > h3{
+    font-size: 28px;
+    color: #052231;
+}
+
+.discipline-list > ul{
+
+    background-color: #153F5F;
+}
+
+.discipline-list > ul > li{
+    display: block;
+    border-style: solid;
+    border-color: #153F5F;
+    border-width: 0 20px 20px 20px;
+    background-color: #f4f7f9;
+    padding: 5px 20px;
+}
+
+.discipline-list > ul > li:first-child{
+    text-align: center;
+    border-width: 20px 20px 20px 20px;
+    background-color: #052231;
+    color: #32B0EE;
+    padding: 5px;
+}
+
+@media screen and (max-width: 960px){
+    .discipline-list{
+        width: 100%;
+    }
+}
+
+.service-block{
+    display: inline-block;
+    float: right;
+    width: calc(50% - 10px);
+    margin: 50px auto 0 auto;
+    padding: 0 5px;
+}
+
+.service-block > input, .service-block > input + select{
+    display: block;
+    float: left;
+    width: calc(50% - 35px);
+    border: 1px solid #32B0EE;
+    border-radius: 20px;
+    margin-left: 35px !important;
+}
+
+.service-block > .avarage-data{
+    display: block;
+    clear: both;
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 35px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.avarage-data > span{
+
+    font-size: 18px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 960px){
+    .service-block{
+        width: 100%;
+        margin: 40px auto 0 auto;
+    }
+}
+/*------------------END CONTENT CONTAINER-----------------*/
